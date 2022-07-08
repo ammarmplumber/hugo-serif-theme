@@ -6,9 +6,17 @@
     <div class="row justify-content-start">
       <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
         {{ .Content }}
-        {{ if .Site.Params.homepage.show_contact_box }}
+        <a href="/utilities/" class="button">Utilities</a>
+        <a href="/courts/" class="button">Courts</a>
+        <a href="/taxes/" class="button">Taxes</a>
+        <a href="/transportation/" class="button">Transportation</a>
+        <a href="/parking/" class="button">Parking</a>
+        <a href="/publicworks/" class="button">Public Works</a>
+        <a href="/finance/" class="button">Finance</a>
+        <a href="/contact/" class="button" style="background: white; color: black; border: 1px solid black;">Contact Us</a>
+        <!-- {{ if .Site.Params.homepage.show_contact_box }}
           {{ partial "call.html" (dict "site" .Site "context" . "show_button" "true") }}
-        {{ end }}
+        {{ end }} -->
       </div>
       {{ if .Params.intro_image }}
       <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
@@ -18,7 +26,7 @@
     </div>
   </div>
 </div>
-
+<!-- 
 {{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
 {{if gt (len $services) 0}}
 <div class="strip">
@@ -62,7 +70,7 @@
     </div>
   </div>
 </div>
-{{end}}
+{{end}} -->
 
 {{ end }}
 

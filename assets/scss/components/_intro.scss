@@ -6,7 +6,7 @@
   padding-bottom: 60px;
   overflow: hidden;
   @include media-breakpoint-up(md) {
-    padding-top: 140px;
+    padding-top: 90px;
     padding-bottom: 140px;
   }
   h1 {
@@ -16,10 +16,10 @@
     line-height: 1.2;
     @include media-breakpoint-up(md) {
       width: 80%;
-      font-size: 48px;
+      font-size: 45px;
     }
     @include media-breakpoint-up(lg) {
-      font-size: 50px;
+      font-size: 45px;
     }
   }
   h2 {
