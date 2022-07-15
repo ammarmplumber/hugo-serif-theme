@@ -1,0 +1,17 @@
+{{ define "body_classes" }}page-post{{ end }}
+
+{{ define "main" }}
+<div class="container pb-6 pt-2 pb-md-10">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-8">
+      <div class="service service-single">
+        <h2>{{.Title}}</h2>
+        <br>
+        <!-- {{ partial "call.html" (dict "site" .Site "context" . "show_button" "false") }} -->
+        <div class="content">{{.Content}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

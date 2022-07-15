@@ -1,28 +1,33 @@
 {{ define "body_classes" }}page-default-list{{ end }}
 
 {{ define "main" }}
-<div class="intro">
-  <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
-        {{ .Content }}
-      </div>
-      {{ if .Params.intro_image }}
-      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
-        <img
-          class="intro-image{{ if .Params.intro_image_absolute }} intro-image-absolute{{ end }}{{ if .Params.intro_image_hide_on_mobile }} intro-image-hide-mobile{{ end }}"
-          src="{{ .Params.intro_image | relURL }}" />
-      </div>
-      {{ end }}
-    </div>
-  </div>
-</div>
+
+<style>
+td {
+  padding-bottom:20px;
+}
+</style>
 
 <div class="container pt-6 pb-md-12">
-  <div class="row">
-    {{ range .Pages.ByWeight }}
-    <div class="col-12 col-md-6 mb-2 ">{{ .Render "summary" }}</div>
+  <h1 class="title">{{.Title}}</h1>
+  <br>
+  <table>
+    <!-- Ranges through content/posts/*.md -->
+    {{ range (.Paginator 10).Pages }}
+        <tr style="font-size:large;">
+          <td style="width:120px;">{{.Date.Format "Jan 2006"}}</td>
+          <td><a href="{{.Permalink}}">{{.Title}}</a></td>
+        </tr>
     {{ end }}
-  </div>
+  </table>
+  <br>
+  <h3>
+    {{ if .Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}">  Prev </a>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}">  Next </a>
+    {{ end }}
+  </h3>
 </div>
 {{ end }}
