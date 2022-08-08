@@ -1,15 +1,15 @@
 {{- if and (not .Site.IsServer) hugo.IsProduction -}}
 {{ with getenv "HUGO_GOOGLE_ANALYTICS_ID" | default .Site.Params.google_analytics_id }}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-48076842-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{- . -}}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
-  gtag('config', 'UA-48076842-1');
-  gtag('config', 'AW-631022496');
+  gtag('config', '{{ . }}');
 </script>
-<meta name="google-site-verification" content="tT08UGt1sxxVzr_ikrOY1VkCRxRgQraCOYJA8NiTXUU" />
-<script async src="//92642.tctm.co/t.js"></script>
 {{ end }}
 {{ end }}
