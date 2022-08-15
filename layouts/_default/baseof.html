@@ -36,8 +36,10 @@
 
 </head>
 
-<body class='page {{ block "body_classes" . }}{{ end }}' style="background: rgb(255,131,131);
-background: linear-gradient(90deg, rgba(255,131,131,1) 0%, rgba(255,255,255,1) 100%);">
+<body class='page {{ block "body_classes" . }}{{ end }}' style="background-color: #e5e5f7;
+opacity: 0.8;
+background-image: radial-gradient(#ffabab 0.5px, #e5e5f7 0.5px);
+background-size: 10px 10px;">
   {{ partial "main-menu-mobile.html" . }}
   <div class="wrapper">
     {{ partial "header.html" . }}
