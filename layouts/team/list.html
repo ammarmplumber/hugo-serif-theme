@@ -1,6 +1,53 @@
 {{ define "body_classes" }}page-team-list{{ end }}
 
 {{ define "main" }}
+
+<style>
+  .flexbox-container {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-width: 100%;
+  }
+  
+  .flex-child {
+      flex:1;
+      border: 1px;
+      min-width: 45%;
+      max-width: 800px;
+      padding-right: 30px;
+  }
+  
+  .flex-child-1 {
+      flex:2;
+      border: 1px;
+      padding-left: 20px;
+      padding-right: 20px;
+      flex-shrink: 0;
+  }
+  
+  @media screen and (max-width: 990px) {
+      .flexbox-container {
+          display: flex;
+          flex-direction: column-reverse;
+      }
+  
+      .flex-child {
+          flex:1;
+          border: 1px;
+          min-width: 350px;
+      }
+  
+      .flex-child-1 {
+          flex:2;
+          border: 1px;
+          padding-left: 20px;
+          padding-right: 20px;
+          flex-shrink: 0;
+      }
+  }
+</style>
+  
 <div class="intro">
   <div class="container">
     <div class="row justify-content-start">
@@ -8,7 +55,7 @@
         {{ .Content }}
       </div>
       {{ if .Params.intro_image }}
-      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
+      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2" style="margin-top: auto; margin-bottom: auto;">
         <img
           alt="{{ .Title }}"
           class="intro-image{{ if .Params.intro_image_absolute }} intro-image-absolute{{ end }}{{ if .Params.intro_image_hide_on_mobile }} intro-image-hide-mobile{{ end }}"
