@@ -1,6 +1,6 @@
 <div class="team team-summary">
   {{ if .Params.image }}
-  <div class="team-image">
+  <div class="team-image" style="margin-top: auto; margin-bottom: auto;">
     <img width="360" height="360" alt="Photo of {{ .Title }}" class="img-fluid mb-2" src="{{ .Params.image | relURL }}" />
   </div>
   {{ end }}
